@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 12:35:23 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/04/27 14:46:58 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/04/28 12:27:35 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,62 @@
 #include "../include/phone_book.h"
 
 /* Contact class Constructor */
-Contact::Contact(int id, const char *name, const char *last_name, const char *nickname,
-				 const char *phone_number, const char *dark_secret)
+Contact::Contact(int id, const std::string& name, const std::string& last_name,
+                 const std::string& nickname, const std::string& phone_number,
+                 const std::string& dark_secret) : id(id)
 {
-	this->id = id;
-	this->name = new char[strlen(name) + 1];
-	strcpy(this->name, name);
-	this->last_name = new char[strlen(last_name) + 1];
-	strcpy(this->last_name, last_name);
-	this->nickname = new char[strlen(nickname) + 1];
-	strcpy(this->nickname, nickname);
-	this->phone_number = new char[strlen(phone_number) + 1];
-	strcpy(this->phone_number, phone_number);
-	this->dark_secret = new char[strlen(dark_secret) + 1];
-	strcpy(this->dark_secret, dark_secret);
+    this->name = name;
+    this->last_name = last_name;
+    this->nickname = nickname;
+    this->phone_number = phone_number;
+    this->dark_secret = dark_secret;
 }
 
-/* Contact class Deconstructor */
-Contact::~Contact() {
-    delete[] name;
-    delete[] last_name;
-    delete[] nickname;
-    delete[] phone_number;
-    delete[] dark_secret;
+void Contact::print_truncated(const std::string& str, size_t max_length)
+{
+        if (str.length() <= max_length)
+            std::cout << str;
+        else {
+            for (size_t i = 0; i < max_length - 1; ++i)
+                std::cout << str[i];
+            std::cout << ".";
+        }
 }
 
-void Contact::print_contact()
+void Contact::print_contact_details()
 {
-	std::cout << id << "\n";
-	std::cout << name << "\n";
-	std::cout << last_name << "\n";
-	std::cout << phone_number << "\n";
+	std::cout << "ID: " << id << std::endl;
+	std::cout << "Name: " << name << "\n";
+	std::cout << "Last Name: " << last_name << "\n";
+	std::cout << "Nickname: " << nickname << "\n";
+	std::cout << "Phone Number: " << phone_number << "\n";
+	std::cout << "Dark Secret: " << dark_secret << "\n";
+}
+
+void Contact::print_formatted_raw_table()
+{
+    // Print index
+    std::cout << std::right << std::setw(10) << id;
+
+    // Print first name
+    std::cout << " | " << std::right << std::setw(10);
+    if (strlen(name.c_str()) <= 10)
+        std::cout << name;
+    else
+		print_truncated(name, 10);
+
+    // Print last name
+    std::cout << " | " << std::right << std::setw(10);
+    if (strlen(last_name.c_str()) <= 10)
+        std::cout << last_name;
+    else
+		print_truncated(last_name, 10);
+
+    // Print nickname
+    std::cout << " | " << std::right << std::setw(10);
+    if (strlen(nickname.c_str()) <= 10)
+        std::cout << nickname;
+    else
+		print_truncated(nickname, 10);
+    std::cout << std::endl;
 }
