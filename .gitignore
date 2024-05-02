@@ -1,6 +1,17 @@
+# Files and folders
 .DS_Store
 *.dSYM/
+*.pdf
+
+# Executables
 megaphone
 phonebook
 account
+zombie
+zombie2
+brain
+violence
+replace
+harl
+harl2
 main
