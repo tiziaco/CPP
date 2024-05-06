@@ -8,14 +8,14 @@
 			"name": "C++ Linux Debug",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/ex01/main",
+			"program": "${workspaceFolder}/ex06/main",
 			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${fileDirname}",
 			"environment": [],
 			"externalConsole": false,
 			"MIMode": "gdb",
-			"preLaunchTask": "compile phonebook",
+			"preLaunchTask": "compile project",
 			"setupCommands": [
 				{
 					"description": "Enable pretty-printing for gdb",
@@ -33,14 +33,14 @@
 			"name": "C++ MacOS Debug",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/ex01/main",
-			"args": [],
+			"program": "${workspaceFolder}/CPP_01/ex06/main",
+			"args": ["INFO"],
 			"stopAtEntry": false,
 			"cwd": "${fileDirname}",
 			"environment": [],
 			"externalConsole": false,
 			"MIMode": "lldb",
-			"preLaunchTask": "compile phonebook"
+			"preLaunchTask": "compile project"
 		}
 
 	]

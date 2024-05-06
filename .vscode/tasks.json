@@ -2,15 +2,14 @@
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "compile phonebook",
+            "label": "compile project",
             "command": "/usr/bin/c++",
             "args": [
                 "-fcolor-diagnostics",
                 "-fansi-escape-codes",
                 "-g",
                 "${file}",
-                "${fileDirname}/src/Contact.cpp",
-                "${fileDirname}/src/PhoneBook.cpp",
+                "${fileDirname}/Harl.cpp",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],
