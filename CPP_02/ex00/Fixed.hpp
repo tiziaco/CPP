@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 15:26:15 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/05/16 15:43:14 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/05/16 18:59:48 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@
 class Fixed
 {
 private:
-	int	fixed;
+	int	value;
 	static const int point;
 public:
 	Fixed();
-	Fixed(Fixed &fixed);
+	Fixed(const Fixed &fixed);
 	~Fixed();
-	void operator=(const Fixed &fixed);
-	int getRawBits( void );
+	Fixed& operator=(const Fixed &fixed);
+	int getRawBits( void ) const;
 	void setRawBits( int const raw );
 };
 

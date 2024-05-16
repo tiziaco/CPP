@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 15:26:15 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/05/16 18:48:49 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/05/16 19:04:04 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ public:
 	Fixed(const int nbr);
 	Fixed(const float nbr);
 	~Fixed();
-	void operator=(const Fixed &fixed);
+	Fixed& operator=(const Fixed &fixed);
 	float toFloat( void ) const;
 	int toInt( void ) const;
-	int getRawBits( void );
+	int getRawBits( void ) const;
 	void setRawBits( int const raw );
 };
 
