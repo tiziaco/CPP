@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 11:00:32 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/05/17 13:10:47 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/05/17 15:57:49 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ Point::Point(const Point &point) {
 
 Point& Point::operator=(const Point &point) {
 	if (this != &point)
-		*this = point;
+		(Fixed)this->_x = point.getX();
+		(Fixed)this->_y = point.getY();
 	return *this;
 }
 

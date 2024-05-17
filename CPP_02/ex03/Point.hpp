@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 10:52:04 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/05/17 13:16:41 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/05/17 13:24:10 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@ public:
 	const Fixed& getX() const;
 	const Fixed& getY() const;
 };
+
+bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 #endif
