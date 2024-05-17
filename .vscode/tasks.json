@@ -9,7 +9,9 @@
                 "-fansi-escape-codes",
                 "-g",
                 "${file}",
-                "${fileDirname}/Harl.cpp",
+                "${fileDirname}/bsp.cpp",
+                "${fileDirname}/Fixed.cpp",
+                "${fileDirname}/Point.cpp",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],
