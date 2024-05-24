@@ -6,7 +6,7 @@
 #    By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/08 11:38:10 by tiacovel          #+#    #+#              #
-#    Updated: 2024/04/26 11:15:22 by tiacovel         ###   ########.fr        #
+#    Updated: 2024/05/24 11:16:36 by tiacovel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = megaphone
 
 SRC =	$(wildcard *.cpp)
 
-OBJ	= $(SRC:.c=.o)
+OBJ	= $(SRC:.cpp=.o)
 
 RM		= rm -f
 CC		= c++
@@ -25,7 +25,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -g -O0 $(OBJ) -o $(NAME)
 
-%.o: %.c
+%.o:%.c
 	$(CC) $(CFLAGS) -g -O0 -c $< -o $@
 
 clean:

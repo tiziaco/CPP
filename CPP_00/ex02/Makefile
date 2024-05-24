@@ -6,7 +6,7 @@
 #    By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/08 11:38:10 by tiacovel          #+#    #+#              #
-#    Updated: 2024/04/30 12:36:14 by tiacovel         ###   ########.fr        #
+#    Updated: 2024/05/24 11:19:39 by tiacovel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = account
 
 SRC =	$(wildcard *.cpp)
 
-OBJ	= $(SRC:.c=.o)
+OBJ	= $(SRC:.cpp=.o)
 
 RM		= rm -f
 CC		= c++
