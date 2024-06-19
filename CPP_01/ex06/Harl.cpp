@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 11:24:31 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/05/06 12:25:36 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/06/19 18:22:24 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,19 @@ Harl::~Harl() {
 }
 
 void Harl::debug(void) {
-	std::cout << "[DEBUG]" << std::endl;
+	std::cout << "[DEBUG] level selected." << std::endl;
 }
 
 void Harl::info(void) {
-	std::cout << "[INFO]" << std::endl;
+	std::cout << "[INFO] level selected." << std::endl;
 }
 
 void Harl::warning(void) {
-	std::cout << "[WARNING]" << std::endl;
+	std::cout << "[WARNING] level selected." << std::endl;
 }
 
 void Harl::error(void) {
-	std::cout << "[ERROR]" << std::endl;
+	std::cout << "[ERROR] level selected." << std::endl;
 }
 
 void    Harl::complain( std:: string level ) {

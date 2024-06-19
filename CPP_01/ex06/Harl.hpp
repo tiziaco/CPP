@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 11:21:55 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/05/06 12:11:33 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/06/19 18:21:03 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include <iostream>
 #include <string>
-
+#include <stdlib.h>
 
 class Harl
 {

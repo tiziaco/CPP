@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 11:21:22 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/05/06 12:16:22 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/06/19 18:19:15 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ int main( void ) {
         harl.complain(input);
     } while (input.compare("exit"));
 
-    return EXIT_SUCCESS;
+    return (EXIT_SUCCESS);
 }

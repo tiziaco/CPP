@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 17:50:22 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/05/03 18:46:47 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/06/19 18:39:40 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@ void File::replace(std::string search, std::string replace) {
     std::ifstream _in_file;
     std::ofstream _out_file;
     std::string line;
+
+    if (search.empty()) {
+        std::cerr << "Search string cannot be empty." << std::endl;
+        return;
+    }
+    
     // Open input file
     _in_file.open(this->_filename.c_str());
     if (!_in_file.is_open()) {
@@ -34,6 +40,7 @@ void File::replace(std::string search, std::string replace) {
     }
     // create output file
     _out_file.open(this->_new_filename.c_str());
+
     // Search an replace
     while (std::getline(_in_file, line)) {
         std::string newLine;
@@ -41,12 +48,12 @@ void File::replace(std::string search, std::string replace) {
         while (pos < line.length()) {
             size_t foundPos = line.find(search, pos);
             if (foundPos != std::string::npos) {
-                newLine += line.substr(pos, foundPos - pos); // Add characters before the search string
-                newLine += replace; // Add the replacement string
-                pos = foundPos + search.length(); // Move past the search string
+                newLine += line.substr(pos, foundPos - pos);
+                newLine += replace;
+                pos = foundPos + search.length();
             } else {
-                newLine += line.substr(pos); // Add remaining characters
-                break; // No more occurrences found, exit loop
+                newLine += line.substr(pos);
+                break;
             }
         }
         _out_file << newLine << std::endl;
