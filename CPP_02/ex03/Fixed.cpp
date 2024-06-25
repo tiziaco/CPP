@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 15:26:13 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/05/17 10:28:35 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/06/25 15:49:27 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ void Fixed::setRawBits( int const raw ) {
 }
 
 int Fixed::toInt( void ) const {
-	return static_cast<int>(value) / (1 << this->fract_point);
+	return this->value >> fract_point;
 }
 
 float Fixed::toFloat( void ) const {
-	return static_cast<float>(value) / (1 << this->fract_point);
+	return static_cast<float>(this->getRawBits()) / (1 << this->fract_point);
 }
 
 /* Stream operators */
@@ -61,26 +61,20 @@ Fixed& Fixed::operator=(const Fixed &fixed) {
 }
 
 /* Arithmetic operators */
-Fixed Fixed::operator+(const Fixed &fixed) {
-	Fixed result;
-	result.setRawBits(this->getRawBits() + fixed.getRawBits());
-	return result;
+Fixed Fixed::operator+(const Fixed &fixed) const {
+	return Fixed( this->toFloat() + fixed.toFloat() );
 }
 
-Fixed Fixed::operator-(const Fixed &fixed) {
-	Fixed result;
-	result.setRawBits(this->getRawBits() - fixed.getRawBits());
-	return result;
+Fixed Fixed::operator-(const Fixed &fixed) const {
+	return Fixed( this->toFloat() - fixed.toFloat() );
 }
 
-Fixed Fixed::operator*(const Fixed &fixed) {
-	Fixed result(this->toFloat() * fixed.toFloat());
-	return result;
+Fixed Fixed::operator*(const Fixed &fixed) const {
+	return Fixed( this->toFloat() * fixed.toFloat() );
 }
 
-Fixed Fixed::operator/(const Fixed &fixed) {
-	Fixed result(this->toFloat() / fixed.toFloat());
-	return result;
+Fixed Fixed::operator/(const Fixed &fixed) const {
+	return Fixed( this->toFloat() / fixed.toFloat() );
 }
 
 // Comparison operators //
