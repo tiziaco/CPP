@@ -6,15 +6,15 @@
 #    By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/08 11:38:10 by tiacovel          #+#    #+#              #
-#    Updated: 2024/05/16 15:46:43 by tiacovel         ###   ########.fr        #
+#    Updated: 2024/07/02 15:27:16 by tiacovel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fix
+NAME = trap
 
 SRC =	$(wildcard *.cpp)
 
-OBJ	= $(SRC:.c=.o)
+OBJ	= $(SRC:.cpp=.o)
 
 RM		= rm -f
 CC		= c++
@@ -25,7 +25,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -g -O0 $(OBJ) -o $(NAME)
 
-%.o: %.c
+%.o: %.cpp
 	$(CC) $(CFLAGS) -g -O0 -c $< -o $@
 
 clean:
