@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 15:26:15 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/05/16 18:59:48 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/02 12:45:46 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 class Fixed
 {
 private:
-	int	value;
-	static const int point;
+	int	_value;
+	static const int _point;
 public:
 	Fixed();
 	Fixed(const Fixed &fixed);

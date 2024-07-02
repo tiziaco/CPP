@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 15:26:15 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/07/02 11:38:17 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/02 14:30:41 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ public:
 	Fixed(const float nbr);
 	~Fixed();
 
-	float toFloat( void ) const;
-	int toInt( void ) const;
+	float toFloat(void) const;
+	int toInt(void) const;
 
-	int getRawBits( void ) const;
-	void setRawBits( int const raw );
+	int getRawBits(void) const;
+	void setRawBits(int const raw);
 
 	Fixed& operator=(const Fixed &fixed);
 	Fixed operator+(const Fixed &fixed) const;
@@ -51,10 +51,10 @@ public:
 	Fixed& operator--();
 	Fixed operator--(int);
 	
-	static Fixed& min( Fixed &a, Fixed &b );
-    static const Fixed& min( const Fixed &a, const Fixed &b );
-    static Fixed& max( Fixed &a, Fixed &b );
-    static const Fixed& max( const Fixed &a, const Fixed &b );
+	static Fixed& min(Fixed &a, Fixed &b);
+    static const Fixed& min(const Fixed &a, const Fixed &b);
+    static Fixed& max(Fixed &a, Fixed &b );
+    static const Fixed& max(const Fixed &a, const Fixed &b);
 };
 
 std::ostream &operator<<(std::ostream& os, const Fixed& nbr);

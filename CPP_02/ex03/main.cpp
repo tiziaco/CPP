@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 13:02:13 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/07/02 12:28:16 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/02 14:32:55 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main() {
 	Point a(1.0f, 1.0f);
 	Point b(4.0f, 1.0f);
 	Point c(2.0f, 5.0f);
-	Point point(2.0f, 2.0f);
+	Point point(0.0f, 0.0f);
 
 	std::cout << "Triangle vertices:" << std::endl;
 	std::cout << "	A: x= " << a.getX() << ", y= " << a.getY() << std::endl;
