@@ -6,24 +6,23 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 15:26:13 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/06/25 15:49:27 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/02 11:44:05 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed() {
-	this->value = 0;
+/* Constructors and deconstructors */
+Fixed::Fixed(void): _value(0) {
 }
 
-Fixed::Fixed(const int nbr) {
-	this->value = nbr << this->fract_point;
+Fixed::Fixed(const int nbr): _value(nbr << _fract_point) {
 }
 
-Fixed::Fixed(float nbr) {
-	this->value = static_cast<int>(nbr * (1 << this->fract_point) + 0.5f);
+Fixed::Fixed(float nbr): _value(( std::roundf( nbr * (1 << _fract_point )))) {
 }
 
+// Copy constructor
 Fixed::Fixed(const Fixed &fixed) {
 	*this = fixed;
 }
@@ -31,20 +30,21 @@ Fixed::Fixed(const Fixed &fixed) {
 Fixed::~Fixed() {
 }
 
+/* Getters and setters */
 int Fixed::getRawBits( void ) const {
-	return (this->value);
+	return (this->_value);
 }
 
 void Fixed::setRawBits( int const raw ) {
-	this->value = raw;
+	this->_value = raw;
 }
 
 int Fixed::toInt( void ) const {
-	return this->value >> fract_point;
+	return this->_value >> _fract_point;
 }
 
 float Fixed::toFloat( void ) const {
-	return static_cast<float>(this->getRawBits()) / (1 << this->fract_point);
+	return static_cast<float>(this->getRawBits()) / (1 << this->_fract_point);
 }
 
 /* Stream operators */
@@ -56,7 +56,7 @@ std::ostream& operator<<(std::ostream& os, const Fixed& nbr) {
 /* Assignment operator */
 Fixed& Fixed::operator=(const Fixed &fixed) {
 	if (this != &fixed)
-		this->value = fixed.getRawBits();
+		this->_value = fixed.getRawBits();
 	return (*this);
 }
 
@@ -106,24 +106,24 @@ bool Fixed::operator!=(const Fixed &fixed) const {
 // Increment / decrement operators //
 
 Fixed& Fixed::operator++() {
-	++value;
+	++_value;
 	return *this;
 }
 
 Fixed Fixed::operator++(int) {
 	Fixed new_fix = *this;
-	new_fix.value = this->value++;
+	new_fix._value = this->_value++;
 	return new_fix;
 }
 
 Fixed& Fixed::operator--() {
-	--value;
+	--_value;
 	return *this;
 }
 
 Fixed Fixed::operator--(int) {
 	Fixed new_fix = *this;
-	new_fix.value = this->value--;
+	new_fix._value = this->_value--;
 	return new_fix;
 }
 

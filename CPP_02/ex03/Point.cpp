@@ -6,13 +6,13 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 11:00:32 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/06/25 15:35:04 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/02 12:22:30 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-// Constructors and destructors
+/* Constructors and destructors */
 
 Point::Point() : _x(0), _y(0) {
 }
@@ -23,14 +23,10 @@ Point::Point(float const x, float const y): _x(x), _y(y) {
 Point::~Point(void) {
 }
 
-// Copy constructor
-
-Point::Point(const Point &point) {
-	*this = point;
+Point::Point(const Point &point): _x(point.getX()), _y(point.getY()) {
 }
 
-// Copy assignment operator
-
+/* Copy assignment operator */
 Point& Point::operator=(const Point &point) {
 	if (this != &point)
 	{
@@ -40,8 +36,7 @@ Point& Point::operator=(const Point &point) {
 	return *this;
 }
 
-// Getters
-
+/* Getters and setters */
 Fixed Point::getX() const { 
 	return this->_x; 
 }

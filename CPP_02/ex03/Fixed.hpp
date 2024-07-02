@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 15:26:15 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/06/25 14:56:29 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/02 11:38:17 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 class Fixed
 {
 private:
-	int	value;
-	static const int fract_point = 8;
+	int	_value;
+	static const int _fract_point = 8;
 public:
-	Fixed();
+	Fixed(void);
 	Fixed(const Fixed &fixed);
 	Fixed(const int nbr);
 	Fixed(const float nbr);
