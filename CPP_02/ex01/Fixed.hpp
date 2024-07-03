@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 15:26:15 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/07/02 12:47:25 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/03 10:26:19 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ public:
 	Fixed(const float nbr);
 	~Fixed();
 	Fixed& operator=(const Fixed &fixed);
-	float toFloat( void ) const;
-	int toInt( void ) const;
-	int getRawBits( void ) const;
-	void setRawBits( int const raw );
+	float toFloat(void) const;
+	int toInt(void) const;
+	int getRawBits(void) const;
+	void setRawBits(int const raw);
 };
 
 std::ostream &operator<<(std::ostream& os, const Fixed& nbr);

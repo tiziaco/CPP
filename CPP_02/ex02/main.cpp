@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 15:26:10 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/05/17 10:32:49 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/03 10:53:07 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,19 @@ void testComparisonOperators() {
 	std::cout << "a != c = " << ((a != c) ? "True" : "False") << std::endl;
 }
 
+void testFromSubject() {
+	Fixed a;
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
+}
+
 int main() {
 	std::cout << "**** Testing arithmetic operators ****" << std::endl;
 	testArithmeticOps();
@@ -136,6 +149,10 @@ int main() {
 
 	std::cout << "**** Testing min and max functions ****" << std::endl;
 	testMinMax();
+	std::cout << std::endl;
+
+	std::cout << "**** Tests from the subject ****" << std::endl;
+	testFromSubject();
 
 	return 0;
 }

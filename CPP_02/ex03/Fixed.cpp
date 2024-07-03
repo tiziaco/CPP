@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 15:26:13 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/07/02 14:29:15 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/03 10:55:59 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Fixed::Fixed(void): _value(0) {
 Fixed::Fixed(const int nbr): _value(nbr << _fract_point) {
 }
 
-Fixed::Fixed(float nbr): _value((std::roundf( nbr * (1 << _fract_point )))) {
+Fixed::Fixed(float nbr): _value((roundf( nbr * (1 << _fract_point )))) {
 }
 
 // Copy constructor
