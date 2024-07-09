@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 16:35:28 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/07/08 17:20:50 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/09 11:11:21 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,17 @@
 
 // Constructors and destructor
 
-DiamondTrap::DiamondTrap(void) {
-	std::cout << "ScavTrap has been initialised with the default constructor." << std::endl;
-}
-
-DiamondTrap::DiamondTrap(std::string name): ClapTrap( name ), FragTrap( name ), ScavTrap( name ) {
+DiamondTrap::DiamondTrap(std::string name): ClapTrap(name), ScavTrap(name), FragTrap(name) {
 	this->_name = name;
     this->ClapTrap::_name = name + "_clap_name";
-    FragTrap::_hitPoints = 100;
-    ScavTrap::_energyPoints = 50;
-    FragTrap::_attackDamage = 30;
-	std::cout << "ScavTrap named '"<< name << "' has been initialised." << std::endl;
+    FragTrap::_hit_points = 100;
+    ScavTrap::_energy_points = 50;
+    FragTrap::_attack_points = 30;
+	std::cout << "DiamondTrap named '"<< name << "' has been initialised." << std::endl;
 }
 
 DiamondTrap::~DiamondTrap() {
-	std::cout << "ScavTrap '"<< this->_name <<"' has been destructed." << std::endl;
+	std::cout << "DiamondTrap '"<< this->_name <<"' has been destructed." << std::endl;
 }
 
 /* Forwarding functions */
