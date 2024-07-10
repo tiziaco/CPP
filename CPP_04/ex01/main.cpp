@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 11:47:53 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/07/10 16:55:56 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/10 17:46:25 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void test_subject(void) {
 	
 	std::cout << j->getType() << " " << std::endl; 
 	std::cout << i->getType() << " " << std::endl; 
-	i->makeSound(); //will output the cat sound! 
+	i->makeSound(); 
 	j->makeSound();
 	meta->makeSound();
 
