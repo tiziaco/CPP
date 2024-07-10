@@ -9,9 +9,10 @@
                 "-fansi-escape-codes",
                 "-g",
                 "${file}",
-                "${fileDirname}/bsp.cpp",
-                "${fileDirname}/Fixed.cpp",
-                "${fileDirname}/Point.cpp",
+                "${fileDirname}/Animal.cpp",
+                "${fileDirname}/Cat.cpp",
+                "${fileDirname}/Dog.cpp",
+                "${fileDirname}/Brain.cpp",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],

@@ -33,7 +33,7 @@
 			"name": "C++ MacOS Debug",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/CPP_02/ex03/main",
+			"program": "${workspaceFolder}/CPP_04/ex01/main",
 			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${fileDirname}",
