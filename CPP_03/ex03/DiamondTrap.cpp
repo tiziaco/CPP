@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 16:35:28 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/07/11 10:41:30 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/11 15:59:14 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,20 +41,6 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap& trap) {
 	}
 	std::cout << "Assignment operator calld from '"<< trap._name << "'."<< std::endl;
 	return *this;
-}
-
-/* Forwarding functions */
-
-void DiamondTrap::attack(const std::string& target) {
-	ScavTrap::attack(target);
-}
-
-void DiamondTrap::takeDamage(unsigned int amount) {
-	ClapTrap::takeDamage(amount);
-}
-
-void DiamondTrap::beRepaired(unsigned int amount) {
-	ClapTrap::beRepaired(amount);
 }
 
 /* Public methods */

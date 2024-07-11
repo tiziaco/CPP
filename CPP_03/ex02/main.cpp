@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 16:35:52 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/07/11 10:08:25 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/11 15:48:43 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int main() {
 	fragtrap1.highFivesGuys();
 
 	// Testing attack when out of energy
-	for (int i = 0; i < 50; ++i) {
+	for (int i = 0; i < 101; ++i) {
 		fragtrap1.attack("Target1");
 	}
 	fragtrap1.attack("Target1");

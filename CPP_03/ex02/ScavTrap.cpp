@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 16:35:28 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/07/11 10:49:13 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/11 15:36:37 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,15 +46,35 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& trap) {
 /* Forwarding functions */
 
 void ScavTrap::attack(const std::string& target) {
-	ClapTrap::attack(target);
+	if (this->_energy_points <= 0) {
+		std::cout << "ScavTrap '" << this->_name << "' can't attack because is out of energy!" << std::endl;
+		return;
+	}
+	if (this->_hit_points <= 0) {
+		std::cout << "ScavTrap '" << this->_name << "' can't attack because is dead!" << std::endl;
+		return;
+	}
+	this->_energy_points--;
+	std::cout << "ScavTrap '" << this->_name << "' attacks '" << target << "', causing " << this->_attack_points << " points of damage!" << std::endl;
 }
 
 void ScavTrap::takeDamage(unsigned int amount) {
-	ClapTrap::takeDamage(amount);
+	if (this->_hit_points <= amount) {
+		std::cout << "ScavTrap '" << _name << "' is dead!" << std::endl;
+		return;
+	}
+	this->_hit_points -= amount;
+	std::cout << "ScavTrap '" << this->_name << "' is attacked and takes " << amount << " points of damage!" << std::endl;
 }
 
 void ScavTrap::beRepaired(unsigned int amount) {
-	ClapTrap::beRepaired(amount);
+	if (this->_energy_points < amount) {
+		std::cout << "ScavTrap '" << _name << "' is out of energy!" << std::endl;
+		return;
+	}
+	this->_hit_points += amount;
+	this->_energy_points--;
+	std::cout << "ScavTrap '" << _name << "' has been repaired, recovering " << amount << " hit points!" << std::endl;
 }
 
 /* Public methods */

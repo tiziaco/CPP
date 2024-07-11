@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 16:35:52 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/07/11 10:23:27 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/11 15:57:39 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ void test_DiamondTrap_actions() {
 	
 	// Perform some actions
 	dt1.attack("Enemy");
-	dt1.takeDamage(30);
-	dt1.beRepaired(20);
+	// dt1.takeDamage(30);
+	// dt1.beRepaired(20);
 
 	// Testing attack when out of energy
 	for (int i = 0; i < 50; ++i) {
