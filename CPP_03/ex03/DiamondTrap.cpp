@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 16:35:28 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/07/09 11:11:21 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/11 10:00:54 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,21 @@ DiamondTrap::DiamondTrap(std::string name): ClapTrap(name), ScavTrap(name), Frag
 
 DiamondTrap::~DiamondTrap() {
 	std::cout << "DiamondTrap '"<< this->_name <<"' has been destructed." << std::endl;
+}
+
+// Copy constructor
+DiamondTrap::DiamondTrap(const DiamondTrap& trap) : ClapTrap(trap), ScavTrap(trap), FragTrap(trap) {
+	// Copy specific members if needed (none here as of now)
+}
+
+// Copy assignment operator
+DiamondTrap& DiamondTrap::operator=(const DiamondTrap& trap) {
+	if (this != &trap) {
+		this->_name = trap._name;
+		ScavTrap::operator=(trap);
+		FragTrap::operator=(trap);
+	}
+	return *this;
 }
 
 /* Forwarding functions */

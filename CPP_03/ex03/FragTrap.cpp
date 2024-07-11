@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 16:35:28 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/07/02 17:39:07 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/11 09:24:57 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // Constructors and destructor
 
-FragTrap::FragTrap(void) {
+FragTrap::FragTrap(void): ClapTrap() {
 	std::cout << "FragTrap has been initialised with the default constructor." << std::endl;
 }
 
@@ -27,6 +27,19 @@ FragTrap::FragTrap(std::string name): ClapTrap(name) {
 
 FragTrap::~FragTrap() {
 	std::cout << "FragTrap '"<< this->_name <<"' has been destructed." << std::endl;
+}
+
+// Copy constructor
+FragTrap::FragTrap(const FragTrap& trap) : ClapTrap(trap) {
+	// Copy specific members if needed (none here as of now)
+}
+
+// Copy assignment operator
+FragTrap& FragTrap::operator=(const FragTrap& trap) {
+	if (this != &trap) {
+		ClapTrap::operator=(trap);
+	}
+	return *this;
 }
 
 /* Forwarding functions */

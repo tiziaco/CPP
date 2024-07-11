@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 16:35:28 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/07/02 17:25:36 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/11 09:14:14 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // Constructors and destructor
 
-ScavTrap::ScavTrap(void) {
+ScavTrap::ScavTrap(void): ClapTrap() {
 	std::cout << "ScavTrap has been initialised with the default constructor." << std::endl;
 }
 
@@ -29,18 +29,31 @@ ScavTrap::~ScavTrap() {
 	std::cout << "ScavTrap '"<< this->_name <<"' has been destructed." << std::endl;
 }
 
+// Copy constructor
+ScavTrap::ScavTrap(const ScavTrap& trap) : ClapTrap(trap) {
+	// Copy specific members if needed (none here as of now)
+}
+
+// Copy assignment operator
+ScavTrap& ScavTrap::operator=(const ScavTrap& trap) {
+	if (this != &trap) {
+		ClapTrap::operator=(trap);
+	}
+	return *this;
+}
+
 /* Forwarding functions */
 
 void ScavTrap::attack(const std::string& target) {
-    ClapTrap::attack(target);
+	ClapTrap::attack(target);
 }
 
 void ScavTrap::takeDamage(unsigned int amount) {
-    ClapTrap::takeDamage(amount);
+	ClapTrap::takeDamage(amount);
 }
 
 void ScavTrap::beRepaired(unsigned int amount) {
-    ClapTrap::beRepaired(amount);
+	ClapTrap::beRepaired(amount);
 }
 
 /* Public methods */

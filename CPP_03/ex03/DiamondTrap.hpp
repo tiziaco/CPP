@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 16:35:58 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/07/09 10:53:36 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/11 09:58:40 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,11 @@ private:
 public:
 	DiamondTrap(std::string name);
 	~DiamondTrap();
+	DiamondTrap(const DiamondTrap& trap);
+	DiamondTrap& operator=(const DiamondTrap& trap);
 	void attack(const std::string& target);
-    void takeDamage(unsigned int amount);
-    void beRepaired(unsigned int amount);
+	void takeDamage(unsigned int amount);
+	void beRepaired(unsigned int amount);
 	void whoAmI(void);
 };
 
