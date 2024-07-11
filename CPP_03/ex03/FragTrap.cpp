@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 16:35:28 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/07/11 10:47:07 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/11 16:59:45 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,20 +41,6 @@ FragTrap& FragTrap::operator=(const FragTrap& trap) {
 		ClapTrap::operator=(trap);
 	}
 	return *this;
-}
-
-/* Forwarding functions */
-
-void FragTrap::attack(const std::string& target) {
-    ClapTrap::attack(target);
-}
-
-void FragTrap::takeDamage(unsigned int amount) {
-    ClapTrap::takeDamage(amount);
-}
-
-void FragTrap::beRepaired(unsigned int amount) {
-    ClapTrap::beRepaired(amount);
 }
 
 /* Public methods */

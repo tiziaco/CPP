@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 16:35:58 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/07/11 15:21:22 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/11 17:15:51 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,8 @@ public:
 	~ScavTrap();
 	ScavTrap(const ScavTrap& trap);
 	ScavTrap& operator=(const ScavTrap& trap);
+	
 	void attack(const std::string& target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
 	void guardGate(void);
 };
 

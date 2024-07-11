@@ -6,26 +6,28 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 16:35:52 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/07/11 15:48:43 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/11 17:16:21 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main() {
 	FragTrap fragtrap1("FragTrap1");
+	ScavTrap scavtrap1("ScavTrap1");
 
-	// Testing attack inherited from ClapTrap
+	// Testing attack
 	fragtrap1.attack("Target1");
 
-	// Testing takeDamage inherited from ClapTrap
+	// Testing takeDamage
 	fragtrap1.takeDamage(30);
 
-	// Testing beRepaired inherited from ClapTrap
+	// Testing beRepaired
 	fragtrap1.beRepaired(20);
 
-	// Testing the guardGate method specific to ScavTrap
+	// Testing the highFive method
 	fragtrap1.highFivesGuys();
 
 	// Testing attack when out of energy

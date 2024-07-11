@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 16:35:28 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/07/11 15:44:45 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/11 17:17:25 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,40 +41,6 @@ FragTrap& FragTrap::operator=(const FragTrap& trap) {
 		ClapTrap::operator=(trap);
 	}
 	return *this;
-}
-
-/* Forwarding functions */
-
-void FragTrap::attack(const std::string& target) {
-	if (this->_energy_points <= 0) {
-		std::cout << "FragTrap '" << this->_name << "' can't attack because is out of energy!" << std::endl;
-		return;
-	}
-	if (this->_hit_points <= 0) {
-		std::cout << "FragTrap '" << this->_name << "' can't attack because is dead!" << std::endl;
-		return;
-	}
-	this->_energy_points--;
-	std::cout << "FragTrap '" << this->_name << "' attacks '" << target << "', causing " << this->_attack_points << " points of damage!" << std::endl;
-}
-
-void FragTrap::takeDamage(unsigned int amount) {
-	if (this->_hit_points <= amount) {
-		std::cout << "FragTrap '" << _name << "' is dead!" << std::endl;
-		return;
-	}
-	this->_hit_points -= amount;
-	std::cout << "FragTrap '" << this->_name << "' is attacked and takes " << amount << " points of damage!" << std::endl;
-}
-
-void FragTrap::beRepaired(unsigned int amount) {
-	if (this->_energy_points < amount) {
-		std::cout << "FragTrap '" << _name << "' is out of energy!" << std::endl;
-		return;
-	}
-	this->_hit_points += amount;
-	this->_energy_points--;
-	std::cout << "FragTrap '" << _name << "' has been repaired, recovering " << amount << " hit points!" << std::endl;
 }
 
 /* Public methods */

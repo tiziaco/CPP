@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 16:35:28 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/07/11 10:46:56 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/11 16:58:16 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,15 +46,16 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& trap) {
 /* Forwarding functions */
 
 void ScavTrap::attack(const std::string& target) {
-	ClapTrap::attack(target);
-}
-
-void ScavTrap::takeDamage(unsigned int amount) {
-	ClapTrap::takeDamage(amount);
-}
-
-void ScavTrap::beRepaired(unsigned int amount) {
-	ClapTrap::beRepaired(amount);
+	if (this->_energy_points <= 0) {
+		std::cout << "ScavTrap '" << this->_name << "' can't attack because is out of energy!" << std::endl;
+		return;
+	}
+	if (this->_hit_points <= 0) {
+		std::cout << "ScavTrap '" << this->_name << "' can't attack because is dead!" << std::endl;
+		return;
+	}
+	this->_energy_points--;
+	std::cout << "ScavTrap '" << this->_name << "' attacks '" << target << "', causing " << this->_attack_points << " points of damage!" << std::endl;
 }
 
 /* Public methods */

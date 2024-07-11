@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 16:35:58 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/07/11 09:52:39 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/11 17:00:49 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,6 @@ public:
 	~FragTrap();
 	FragTrap(const FragTrap& trap);
 	FragTrap& operator=(const FragTrap& trap);
-	void attack(const std::string& target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
 	void highFivesGuys(void);
 };
 
