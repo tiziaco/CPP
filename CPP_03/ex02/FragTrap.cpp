@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 16:35:28 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/07/11 09:24:57 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/11 10:48:45 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ FragTrap::~FragTrap() {
 
 // Copy constructor
 FragTrap::FragTrap(const FragTrap& trap) : ClapTrap(trap) {
-	// Copy specific members if needed (none here as of now)
+	*this = trap;
+	std::cout << "FragTrap named '"<< trap._name << "' has been copied." << std::endl;
 }
 
 // Copy assignment operator

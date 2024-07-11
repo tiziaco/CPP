@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 16:35:52 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/07/11 10:01:45 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/11 10:23:27 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,23 @@
 #include <iostream>
 #include "DiamondTrap.hpp"
 
-int main() {
-	// Create a DiamondTrap instance using the parameterized constructor
+void test_DiamondTrap_copy() {
+	DiamondTrap dt1("Diamond1");
+
+	// Use the copy constructor to create a copy
+	DiamondTrap dt2(dt1);
+
+	// Use the copy assignment operator to copy dt1 to dt3
+	DiamondTrap dt3("TemporaryName");
+	dt3 = dt1;
+
+	// Output the names to verify the copy operations
+	dt1.whoAmI();
+	dt2.whoAmI();
+	dt3.whoAmI();
+}
+
+void test_DiamondTrap_actions() {
 	DiamondTrap dt1("DiamondOne");
 
 	// Display information about the DiamondTrap instance
@@ -32,13 +47,14 @@ int main() {
 	for (int i = 0; i < 50; ++i) {
 		dt1.attack("Target1");
 	}
+}
 
-	// Test the copy constructor
-	DiamondTrap dt3 = dt1;
-	dt3.whoAmI();
+int main() {
+	std::cout << "\n*** Test DiamondTrap constructors ***" << std::endl;
+	test_DiamondTrap_copy();
 
-	// Test the copy assignment operator
-	dt3.whoAmI();
+	std::cout << "\n*** Test DiamondTrap actions ***" << std::endl;
+	test_DiamondTrap_actions();
 
 	return 0;
 }

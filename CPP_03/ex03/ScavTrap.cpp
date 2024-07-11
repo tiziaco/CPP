@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 16:35:28 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/07/11 09:14:14 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/11 10:46:56 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ ScavTrap::~ScavTrap() {
 
 // Copy constructor
 ScavTrap::ScavTrap(const ScavTrap& trap) : ClapTrap(trap) {
-	// Copy specific members if needed (none here as of now)
+	*this = trap;
+	std::cout << "ScavTrap named '"<< trap._name << "' has been copied." << std::endl;
 }
 
 // Copy assignment operator
