@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 11:31:12 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/07/11 12:02:11 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/12 10:13:15 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 #include <string>
 #include <iostream>
-#include "AMateria.hpp"
+
+class AMateria;
 
 class ICharacter
 {
