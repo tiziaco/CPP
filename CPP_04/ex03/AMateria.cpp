@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 11:34:43 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/07/12 10:23:30 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/15 15:43:28 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ AMateria::AMateria(std::string const & type): _type(type) {
 }
 
 AMateria::~AMateria() {
+	std::cout << "AMateria " << this->_type << " destroyed." << std::endl;
 }
 
 // Copy constructor

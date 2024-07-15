@@ -6,11 +6,11 @@
 #    By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/08 11:38:10 by tiacovel          #+#    #+#              #
-#    Updated: 2024/07/09 11:51:56 by tiacovel         ###   ########.fr        #
+#    Updated: 2024/07/15 15:53:51 by tiacovel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = animal
+NAME = materia
 
 SRC =	$(wildcard *.cpp)
 

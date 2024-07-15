@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 10:06:28 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/07/15 10:49:46 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/15 15:58:51 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ void testCharacterClass() {
 	character1.use(1, target); // Should not use anything
 
 	// Clean up dynamically allocated objects
-	delete cure1;
+	// delete cure1;
 	delete cure2; // Since cure2 was unequipped, it needs to be deleted manually
 }
 
@@ -148,6 +148,28 @@ void testMateriaSource() {
 	delete cure;
 }
 
+void testSubject() {
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+
+	ICharacter* me = new Character("me");
+	
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+
+	ICharacter* bob = new Character("bob");
+	me->use(0, *bob);
+	me->use(1, *bob);
+
+	delete bob;
+	delete me;
+	delete src;
+}
+
 int main() {
 	std::cout << "\n*** TEST Ice Class ***" << std::endl;
 	testIceClass();
@@ -156,10 +178,13 @@ int main() {
 	testCureClass();
 
 	std::cout << "\n*** TEST Character Class ***" << std::endl;
-	// testCharacterClass();
+	testCharacterClass();
 
 	std::cout << "\n*** TEST MateriaSource Class ***" << std::endl;
 	testMateriaSource();
+
+	std::cout << "\n*** TEST from Subject ***" << std::endl;
+	testSubject();
 
 	return 0;
 }
