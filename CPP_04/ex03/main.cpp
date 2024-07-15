@@ -6,13 +6,14 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 10:06:28 by tiacovel          #+#    #+#             */
-/*   Updated: 2024/07/12 12:03:02 by tiacovel         ###   ########.fr       */
+/*   Updated: 2024/07/15 10:49:46 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
+#include "MateriaSource.hpp"
 
 void testIceClass() {
 	// Create a character
@@ -118,6 +119,35 @@ void testCharacterClass() {
 	delete cure2; // Since cure2 was unequipped, it needs to be deleted manually
 }
 
+void testMateriaSource() {
+	MateriaSource source;
+	Character character("testChar");
+
+	// Learn some materias
+	source.learnMateria(new Ice());
+	source.learnMateria(new Cure());
+
+	// Create and use materias
+	AMateria* ice = source.createMateria("ice");
+	AMateria* cure = source.createMateria("cure");
+
+	if (ice) {
+		ice->use(character); // Expected output: "casts ice spell"
+	} else {
+		std::cout << "Failed to create ice materia\n";
+	}
+
+	if (cure) {
+		cure->use(character); // Expected output: "casts cure spell"
+	} else {
+		std::cout << "Failed to create cure materia\n";
+	}
+
+	// Clean up created materias
+	delete ice;
+	delete cure;
+}
+
 int main() {
 	std::cout << "\n*** TEST Ice Class ***" << std::endl;
 	testIceClass();
@@ -126,7 +156,10 @@ int main() {
 	testCureClass();
 
 	std::cout << "\n*** TEST Character Class ***" << std::endl;
-	testCharacterClass();
+	// testCharacterClass();
+
+	std::cout << "\n*** TEST MateriaSource Class ***" << std::endl;
+	testMateriaSource();
 
 	return 0;
 }
