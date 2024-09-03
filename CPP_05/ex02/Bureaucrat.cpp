@@ -49,7 +49,7 @@ void Bureaucrat::decreaseGrade(void) {
 void Bureaucrat::executeForm(AForm const & form) {
 	try {
 		form.execute(*this);
-		// std::cout << this->getName() << " executed " << form.getName() << std::endl;
+		std::cout << this->getName() << " executed " << form.getName() << std::endl;
 	} catch (const std::exception& e) {
 		std::cout << _name << " couldn’t execute " << form.getName() << " because " << e.what() << std::endl;
 	}
