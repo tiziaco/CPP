@@ -3,7 +3,7 @@
 
 /* Constructor and destructor */
 /* AForm::AForm()
-    : _name("Unnamed"), _is_signed(false), _grade_sign(1), _grade_exec(1) {
+	: _name("Unnamed"), _is_signed(false), _grade_sign(1), _grade_exec(1) {
 } */
 
 AForm::AForm(std::string const name, int grade_sign, int grade_exec): 
