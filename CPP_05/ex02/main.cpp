@@ -10,7 +10,7 @@ void testFormSuccessfulSignAndExecute(Bureaucrat& bureaucrat) {
 	std::cout << "\n==== TEST: successful signing and execution ====\n" << std::endl;
 
 	try {
-		RobotomyRequestForm robotomyForm;
+		RobotomyRequestForm robotomyForm("Target A");
 		PresidentialPardonForm pardonForm("Target B");
 		ShrubberyCreationForm shrubberyForm("Target C");
 
@@ -38,7 +38,7 @@ void testFormExecutionFailDueToLowGrade(Bureaucrat& bureaucrat) {
 	std::cout << "\n==== TEST: execution fails due to low grade ====\n" << std::endl;
 	
 	try {
-		RobotomyRequestForm robotomyForm;
+		RobotomyRequestForm robotomyForm("Target A");
 		PresidentialPardonForm pardonForm("Target B");
 		ShrubberyCreationForm shrubberyForm("Target C");
 
@@ -65,7 +65,7 @@ void testFormSignFailDueToLowGrade(Bureaucrat& bureaucrat) {
 	std::cout << "\n==== TEST: signing fails due to low grade ====\n" << std::endl;
 
 	try {
-		RobotomyRequestForm robotomyForm;
+		RobotomyRequestForm robotomyForm("Target A");
 		PresidentialPardonForm pardonForm("Target B");
 		ShrubberyCreationForm shrubberyForm("Target C");
 
@@ -92,7 +92,7 @@ void testFormExecutionWithoutSigning(Bureaucrat& bureaucrat) {
 	std::cout << "\n==== TEST: execution without signing ====\n" << std::endl;
 
 	try {
-		RobotomyRequestForm robotomyForm;
+		RobotomyRequestForm robotomyForm("Target A");
 		PresidentialPardonForm pardonForm("Target B");
 		ShrubberyCreationForm shrubberyForm("Target C");
 
@@ -130,7 +130,7 @@ void testShrubberyCreationFormCopy() {
 void testRobotomyRequestFormCopy() {
     std::cout << "\n=== TEST: RobotomyRequestForm Copy Constructor and Assignment Operator ===\n" << std::endl;
 
-    RobotomyRequestForm original;
+    RobotomyRequestForm original("OriginalTarget");
 
     // Test the copy constructor
     RobotomyRequestForm copyConstructed(original);
