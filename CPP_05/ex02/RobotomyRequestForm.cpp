@@ -4,23 +4,17 @@
 
 /* Constructor and destructor */
 
-RobotomyRequestForm::RobotomyRequestForm(): AForm("RobotomyRequestForm", 72, 45) {
+RobotomyRequestForm::RobotomyRequestForm(const std::string& target):
+	AForm("RobotomyRequestForm", 72, 45),
+	_target(target) {
 }
 
 RobotomyRequestForm::~RobotomyRequestForm() {
 }
 
-/* Copy constructor */
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other)
-	: AForm(other) {
-}
-
 /* Copy assignment operator */
-RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& other) {
-	if (this != &other) {
-		AForm::operator=(other);
-	}
-	return *this;
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other)
+	: AForm(other), _target(other._target) {
 }
 
 /* Member concrete functions */
@@ -32,9 +26,9 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 		throw GradeTooLowException();
 	
 	std::cout << "* drilling noises *" << std::endl;
-    srand(time(0)); // Seed for randomness
-    if (rand() % 2)
-        std::cout << executor.getName() << " has been robotomized successfully!" << std::endl;
-    else
-        std::cout << "Robotomy failed!" << std::endl;
+	srand(time(0)); // Seed for randomness
+	if (rand() % 2)
+		std::cout << _target << " has been robotomized successfully!" << std::endl;
+	else
+		std::cout << "Robotomy failed!" << std::endl;
 }
