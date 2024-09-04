@@ -42,17 +42,17 @@ void testFormExecutionFailDueToLowGrade(Bureaucrat& bureaucrat) {
 		PresidentialPardonForm pardonForm("Target B");
 		ShrubberyCreationForm shrubberyForm("Target C");
 
-		std::cout << bureaucrat << std::endl;
-		std::cout << robotomyForm << std::endl;
+		std::cout << bureaucrat << "\n" << std::endl;
 
+		std::cout << robotomyForm << "\n" << std::endl;
 		bureaucrat.signForm(robotomyForm);
 		bureaucrat.executeForm(robotomyForm);
 
-		std::cout << pardonForm << std::endl;
+		std::cout << "\n" << pardonForm << "\n" << std::endl;
 		bureaucrat.signForm(pardonForm);
 		bureaucrat.executeForm(pardonForm);
 
-		std::cout << shrubberyForm << std::endl;
+		std::cout << "\n" << shrubberyForm << "\n" << std::endl;
 		bureaucrat.signForm(shrubberyForm);
 		bureaucrat.executeForm(shrubberyForm);
 	} catch (const std::exception& e) {
@@ -69,17 +69,17 @@ void testFormSignFailDueToLowGrade(Bureaucrat& bureaucrat) {
 		PresidentialPardonForm pardonForm("Target B");
 		ShrubberyCreationForm shrubberyForm("Target C");
 
-		std::cout << bureaucrat << std::endl;
-		std::cout << robotomyForm << std::endl;
+		std::cout << bureaucrat << "\n" << std::endl;
 
+		std::cout << robotomyForm << "\n" <<std::endl;
 		bureaucrat.signForm(robotomyForm);  
 		bureaucrat.executeForm(robotomyForm);
 
-		std::cout << pardonForm << std::endl;
+		std::cout << "\n" << pardonForm << "\n" << std::endl;
 		bureaucrat.signForm(pardonForm);  
 		bureaucrat.executeForm(pardonForm);
 
-		std::cout << shrubberyForm << std::endl;
+		std::cout << "\n" << shrubberyForm << "\n" << std::endl;
 		bureaucrat.signForm(shrubberyForm);  
 		bureaucrat.executeForm(shrubberyForm);
 	} catch (const std::exception& e) {
@@ -96,15 +96,15 @@ void testFormExecutionWithoutSigning(Bureaucrat& bureaucrat) {
 		PresidentialPardonForm pardonForm("Target B");
 		ShrubberyCreationForm shrubberyForm("Target C");
 
-		std::cout << bureaucrat << std::endl;
-		std::cout << robotomyForm << std::endl;
+		std::cout << bureaucrat << "\n" << std::endl;
 
+		std::cout << robotomyForm << "\n" << std::endl;
 		bureaucrat.executeForm(robotomyForm);
 
-		std::cout << pardonForm << std::endl;
+		std::cout << "\n" << pardonForm << "\n" << std::endl;
 		bureaucrat.executeForm(pardonForm);
 
-		std::cout << shrubberyForm << std::endl;
+		std::cout << "\n" << shrubberyForm << "\n" << std::endl;
 		bureaucrat.executeForm(shrubberyForm);
 	} catch (const std::exception& e) {
 		std::cerr << "Exception: " << e.what() << std::endl;
