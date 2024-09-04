@@ -10,6 +10,19 @@ RobotomyRequestForm::RobotomyRequestForm(): AForm("RobotomyRequestForm", 72, 45)
 RobotomyRequestForm::~RobotomyRequestForm() {
 }
 
+/* Copy constructor */
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other)
+	: AForm(other) {
+}
+
+/* Copy assignment operator */
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& other) {
+	if (this != &other) {
+		AForm::operator=(other);
+	}
+	return *this;
+}
+
 /* Member concrete functions */
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
