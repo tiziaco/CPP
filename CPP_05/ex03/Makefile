@@ -6,11 +6,11 @@
 #    By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/08 11:38:10 by tiacovel          #+#    #+#              #
-#    Updated: 2024/09/02 17:45:01 by tiacovel         ###   ########.fr        #
+#    Updated: 2024/10/01 15:18:25 by tiacovel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = form
+NAME = intern
 
 SRC =	$(wildcard *.cpp)
 

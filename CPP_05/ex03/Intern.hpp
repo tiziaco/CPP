@@ -4,9 +4,15 @@
 #include <string>
 #include <iostream>
 
+#include "AForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+
+struct FormType {
+	std::string name;
+	AForm* (*create)(const std::string&);
+};
 
 class Intern
 {
@@ -16,7 +22,7 @@ public:
 	Intern(const Intern& intern);
 	Intern& operator=(const Intern& intern);
 
-	void makeForm(const std::string formName, const std::string target);
+	AForm* makeForm(const std::string formName, const std::string target);
 };
 
 #endif
